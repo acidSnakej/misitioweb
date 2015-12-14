@@ -1,0 +1,6 @@
+
+    <article>
+            <a href="{% url 'blog.views.entrada' entrada.pk %}"><h3>{{ entrada.titulo }}</h3></a>
+            <time>{{ entrada.fecha }}</time>
+            <p>{{ entrada.contenido }}</p>
+    </article>

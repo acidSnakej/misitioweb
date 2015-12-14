@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style type="text/css">
+        body {
+              margin:0px;
+              padding: 0px;
+              background-color: rgb(210,210,210);
+        }
+        #contenedor{
+          width: 90%;
+          margin: auto;
+          background: rgb(230,230,230);
+          box-shadow: 0px 10px 15px rgba(0,0,0,0,1);
+          padding: 15px;
+        }
+        p{
+          text-align: justify;
+          font-family:  sans-serif;
+          font-size: 11px;
+          color:rgb(100,100,100);
+        }
+        h1,h2,h3,h4{
+          margin: 0px;
+          padding: 0px;
+          color: rgb(50,50,50);
+          font-family: sans-serif;
+        }
+        article p{
+          padding-left: 20px;
+        }
+        article {
+          border-bottom: 1px dashed grey;
+          padding-top: 10px;
+          padding-bottom: 10px
+        }
+        h1 {
+          font-size: 50px;
+        }
+        h2 {
+          font-size: 10px;
+          text-decoration: underline;
+        }
+        #articulos{
+           width: 65%;
+           float: left;
+        }
+        aside{
+          width: 30%;
+          float: right;
+          background: rgb(205,205,205);
+          padding: 10px;
+          height: 100%;
+        }
+  </style>
+  <title>Blog</title>
+</head>
+<body>
+    <div id="contenedor">
+        <header>
+            <h1>Mi blog</h1>
+            <h2>Blog de Jorge Rivera hecho Django</h2>
+            <section>
+            <div id="articulos">
+                  {% block contenido %}{% endblock contenido %}
+            </div>
+            <aside>
+                  <h4>Sobre mi</h4>
+                  <p>Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur, quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem, vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit veritus placerat per.</p>
+            </aside>
+            <div style="clear:both"></div>
+             </section>
+            <footer>
+                (c) 2015 Jorge Rivera
+            </footer>
+        </header>
+    </div>
+</body>
+</html>
