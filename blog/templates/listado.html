@@ -1,20 +1,22 @@
 {% extends "estructura.html" %}
 {% block contenido %}
-    {% for entrada in entrada.object_list %}
+    {% for entrada in articulos.object_list %}
     <article>
             <a href="{% url 'blog.views.entrada' entrada.pk %}"><h3>{{ entrada.titulo }}</h3></a>
             <time>{{ entrada.fecha }}</time>
             <p>{{ entrada.contenido }}</p>
     </article>
     {% endfor %}
-
+    {% for mes in month %}
+    <p>Esto es lo que trae la  variable {{ mes }}</p>
     <nav>
-    {% if entrada.has_previous %}
-        <a href="?page={{ entrada.previous_page_number }}">Página anterior</a>
+    {% endfor %}
+    {% if articulos.has_previous %}
+        <a href="?page={{ articulos.previous_page_number }}">Página anterior</a>
     {%  endif %}
-        <p> Página {{ entrada.number }} de {{ entrada.paginator.num_pages }} </p>
-        {% if entrada.has_next %}
-        <a href="?page={{ entrada.next_page_number }}">Página siguiente</a>
+        <p> Página {{ articulos.number }} de {{ articulos.paginator.num_pages }} </p>
+        {% if articulos.has_next %}
+        <a href="?page={{ articulos.next_page_number }}">Página siguiente</a>
         {% endif %}
     </nav>
 {% endblock contenido %}

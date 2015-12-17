@@ -38,6 +38,9 @@
         h1 {
           font-size: 50px;
         }
+        header a{
+          text-decoration: none;
+        }
         h2 {
           font-size: 10px;
           text-decoration: underline;
@@ -59,13 +62,18 @@
 <body>
     <div id="contenedor">
         <header>
-            <h1>Mi blog</h1>
+            <a href="http://127.0.0.1:8000/main"><h1>Mi blog</h1></a>
             <h2>Blog de Jorge Rivera hecho Django</h2>
             <section>
             <div id="articulos">
                   {% block contenido %}{% endblock contenido %}
             </div>
             <aside>
+                  <h4>Articulos publicados</h4>
+                  {% for month in months %}
+                  <!-- Ojo como define las urls, django es bastante estricto -->
+                  <a href="{% url 'blog.views.month' month.0 month.1 %}">{{ month.2 }} <p></a></p>
+                  {% endfor %}
                   <h4>Sobre mi</h4>
                   <p>Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur, quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem, vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit veritus placerat per.</p>
             </aside>

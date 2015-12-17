@@ -18,14 +18,15 @@ from django.conf.urls import url, include, patterns
 from django.contrib import admin
 from django.conf import settings
 
-"""
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-
+    url(r'', include('blog.urls')),
 ]
-"""
 
+"""
 urlpatterns = patterns('blog.views',
     (r"^entrada/(?P<pk>\d+)/$", "entrada"),
     (r"", "main"),
 )
+"""
